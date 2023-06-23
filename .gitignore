@@ -4,6 +4,8 @@ dbt_packages/
 logs/
 seeds/
 tests/
+snapshots/
+macros/
 
 
 gpi*.json
