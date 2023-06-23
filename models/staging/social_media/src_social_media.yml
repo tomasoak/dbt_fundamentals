@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: instagram_insights
+    database: gpi-civis-gcp
+    tables:
+      - name: INSTAGRAM_ACCOUNT_REP_TABLE
+      - name: INSTAGRAM_MEDIA_REP_TABLE
+  - name: facebook_insights
+    database: gpi-civis-gcp
+    tables:
+      - name: FBPAGE_POST_REP_TABLE
+        # loaded_at_field: 
+        # freshness:
+        #   warn_after: {count: 12, period: hour}
+        #   error_after: {count: 24, period: hour}
+

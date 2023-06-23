@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_insta
+    description: "Followers per NRO and year"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: asset_name
+        description: "Asset name"
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_facebook')
+              field: year
+      - name: media_like_count
+        description: '{{ doc("insta_docs") }}'
+        tests:
+          - not_null
+          
+  - name: stg_facebook
+    description: "Facebook sum of likes per year"
+    columns:
+      - name: asset_owner
+        description: "Who owns the asset"
+        tests:
+          - not_null
+      - name: year
+        description: "Year"
+      - name: sum_likes
+        description: "Sum of likes in a given year per asset owner"
