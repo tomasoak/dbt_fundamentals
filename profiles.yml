@@ -1,0 +1,11 @@
+dbt_fundamentals:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      localtion: EU
+      method: service-account
+      project: <database-name>
+      dataset: dbt_tcarvalh
+      threads: 1
+      keyfile: <local-gcp-service-account.json>
